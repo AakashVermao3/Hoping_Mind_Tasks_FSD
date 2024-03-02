@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Glassmorphism</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h4{
+          margin-top: 5%;
+          text-align: center;
+          font-weight: 600;
+          margin: 10px 0;
+          font-size: 1.2em;
+        }
+
+        section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(1px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+
+         .glass-container2 {
+            margin-left: auto; /* This will push the container to the right */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(1px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+          }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        
+        
+        }
+
+        p1{
+            display: block;
+            text-align: center;
+    
+            width: 50%;
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #3d535f;
+         }
+
+
+       .profile-pic {
+            position: absolute;
+            top: 25px;
+            left: 300px;
+            width: 422px; /* Adjust the size as needed */
+            height: 422px; /* Adjust the size as needed */
+            border-radius: 100%;
+            overflow: hidden;
+        } 
+
+
+        .glass-container3 {
+
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(1px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+}
+
+.skills-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.skill-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-slight-left {
+    text-align: left;
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
+.align-slight-right {
+    text-align: left;
+    margin-right: 20px; /* Adjust margin as needed */
+}
+
+.align-right {
+    text-align: right;
+}
+
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+    
+    color: #4f4e50;
+}
+
+h1{
+    display: block;
+    
+    color: #3d535f;
+}
+
+.glass-container4 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 200px;
+   
+}
+
+.background-image-container {
+    position: relative;
+}
+
+.background-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.glass-container5 {
+    margin-left: 0;    /* Ensure there's no margin on the left */
+    margin-right: auto; /* This will push the container to the left */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    height: 300px; /* Set a specific height for the container */
+    overflow: hidden; /* Hide content that exceeds the container */
+}
+
+.profile-pic2 {
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the container */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 313px; /* Adjust the size as needed */
+    height: 200px; /* Adjust the size as needed to maintain a square shape */
+    border-radius: 10px; /* Adjust the border-radius as needed */
+    overflow: hidden;
+}
+
+.profile-pic3 {
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the container */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 315px; /* Adjust the size as needed */
+    height: 200px; /* Adjust the size as needed to maintain a square shape */
+    border-radius: 10px; /* Adjust the border-radius as needed */
+    overflow: hidden;
+}
+.glass-container6 {
+    margin-left: auto; /* This will push the container to the right */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(1px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+           height: 300px; /* Set a specific height for the container */
+           overflow: hidden;
+}
+        #home {
+            background-image: url('pic/pp2.jpg');
+        }
+
+        #about {
+            background-image: url('pic/pp5.jpg');
+        }
+
+        #skills {
+            background-image: url('pic/s3.jpg');
+        }
+
+        #education {
+            background-image: url('pic/s5.png');
+        }
+
+       
+    </style>
+</head>
+<body>
+
+    <section id="home" class="parallax">
+        <div class="glass-container">
+            <div class="cols cols0">
+                <span class="topline">Hello,<br> </span>
+                <h1>I am Aakash Verma <br><span class="multiText"></span></h1>
+                <p>Self-motivated and hardworking fresher seeking for an opportunity to work in a challenging environment to prove my skills and utilize my knowledge & intelligence in the growth of the organization.</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="parallax">
+        <div class="glass-container2">
+        <div class="profile-pic">
+                <img src="pic/picc.png" alt="Profile Picture">
+            </div>
+            <h1>About Me</h1>
+            <p1>I am a perceptive and curious individual, driven by a fervor for exploring diverse cultures and welcoming new experiences. My enthusiasm for sports has not only kept me physically active but has also instilled in me valuable lessons in leadership. I thrive on being tech-savvy, constantly exploring and staying abreast of the latest advancements. My journey is defined by a desire to comprehend the world, a dedication to personal growth, and a keen interest in leveraging technology to create meaningful impact.</p1>
+        </div>
+    </section>
+
+    <section id="skills" class="parallax">
+    <div class="glass-container3">
+        <div class="skills-row">
+        <h1>Skills</h1>
+            <div class="skill-container align-left">
+                <h3>HTML</h3>
+            </div>
+            <div class="skill-container align-slight-left">
+                <h3>CSS</h3>
+            </div>
+            <div class="skill-container align-slight-right">
+                <h3>Java</h3>
+            </div>
+            <div class="skill-container align-right">
+                <h3>Python</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="education" class="parallax">
+        <div class="glass-container4">
+            <h1>Education</h1>
+        </div>
+
+       <div class="glass-container5">
+        
+            <h1>Masters in Computer Applications</h1>
+            <p>from Chitkara University Punjab <br>(2022-2024)</p>
+            
+            <div class="profile-pic2">
+                <img src="pic/pcc3.png" alt="Profile Picture">
+            </div>
+
+        </div>
+
+
+       <div class="glass-container6">
+        
+            <h1>Bachelor's in Computer Application</h1>
+            <p>Baddi University of Emerging Sciences and Technologies <br>(2019-2022)</p>
+
+            <div class="profile-pic2">
+                <img src="pic/pcc4.png" alt="Profile Picture">
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
