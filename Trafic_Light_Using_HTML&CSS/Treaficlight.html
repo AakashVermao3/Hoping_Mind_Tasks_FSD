@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traffic Light</title>
+<style>
+  body {
+    background-color: #ffc0cb; /* Pink background color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px; /* Adjust margin for title */
+  }
+
+  .traffic-light {
+    width: 150px;
+    height: 400px;
+    background-color: #333;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  .light {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #222;
+    transition: background-color 0.5s ease;
+  }
+  .red {
+    background-color: #ff6347;
+  }
+  .green {
+    background-color: #2ecc71;
+  }
+  .yellow {
+    background-color: #f1c40f;
+  }
+  .button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  label {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  #red:checked ~ .traffic-light .light {
+    background-color: transparent;
+  }
+  #red:checked ~ .traffic-light .red {
+    background-color: #ff6347;
+  }
+  #red:checked ~ .button-container label[for="red"] {
+    background-color: red;
+    color: white;
+  }
+
+  #yellow:checked ~ .traffic-light .light {
+    background-color: transparent;
+  }
+  #yellow:checked ~ .traffic-light .yellow {
+    background-color: #f1c40f;
+  }
+  #yellow:checked ~ .button-container label[for="yellow"] {
+    background-color: yellow;
+    color: black;
+  }
+
+  #green:checked ~ .traffic-light .light {
+    background-color: transparent;
+  }
+  #green:checked ~ .traffic-light .green {
+    background-color: #2ecc71;
+  }
+  #green:checked ~ .button-container label[for="green"] {
+    background-color: green;
+    color: white;
+  }
+
+  #alt:checked ~ .traffic-light .light {
+    animation: alt-lights 4s infinite;
+  }
+  #alt:checked ~ .traffic-light .red {
+    animation: alt-light1-animation 4s infinite;
+    transition: 5s;
+  }
+
+  #alt:checked ~ .traffic-light .yellow {
+    animation: alt-light2-animation 4s infinite;
+    transition: 5s;
+  }
+
+  #alt:checked ~ .traffic-light .green {
+    animation: alt-light3-animation 4s infinite;
+  }
+  #reset:checked~.trafficlight .light {
+            background-color: #fff;
+        }
+
+  @keyframes alt-lights {
+    0% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes alt-light1-animation {
+    0% {
+      background-color: #fff;
+    }
+    33% {
+      background-color: red;
+    }
+    66% {
+      background-color: #fff;
+    }
+    100% {
+      background-color: #fff;
+    }
+  }
+
+  @keyframes alt-light2-animation {
+    0% {
+      background-color: #fff;
+    }
+    33% {
+      background-color: #fff;
+    }
+    66% {
+      background-color: yellow;
+    }
+    100% {
+      background-color: #fff;
+    }
+  }
+
+  @keyframes alt-light3-animation {
+    0% {
+      background-color: #fff;
+    }
+    33% {
+      background-color: #fff;
+    }
+    66% {
+      background-color: #fff;
+    }
+    100% {
+      background-color: rgb(26, 232, 3);
+    }
+  }
+
+  #alt:checked ~ .button-container label[for="alt"] {
+    background-color: skyblue;
+    color: white;
+  }
+
+  #all:checked ~ .traffic-light .light {
+    background-color: red,yellow,green;
+  }
+  #all:checked ~ .button-container label[for="all"] {
+    background-color: purple;
+    color: white;
+  }
+
+
+  
+</style>
+</head>
+<body>
+<h1 style="text-align: center;">Traffic Light</h1>
+
+<div class="container">
+  <input type="radio" id="red" name="light" />
+  <input type="radio" id="yellow" name="light" />
+  <input type="radio" id="green" name="light" />
+  <input type="radio" id="all" name="light" />
+  <input type="radio" id="alt" name="light" />
+  <input type="radio" id="reset" name="traffic-light">
+
+  <div class="traffic-light">
+    <div class="light red"></div>
+    <div class="light yellow"></div>
+    <div class="light green"></div>
+  </div>
+
+  <div class="button-container">
+    <label for="red">Red</label>
+    <label for="yellow">Yellow</label>
+    <label for="green">Green</label>
+    <label for="all">All</label>
+    <label for="alt">Auto</label>
+    <label class="button" for="reset">Reset</label>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
